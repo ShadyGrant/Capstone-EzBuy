@@ -28,6 +28,16 @@ export const BagProvider = (props) => {
         })
             .then(getBags)
     }
+    const updateBag = bag => {
+        return fetch(`http://localhost:8088/bags/${bag.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(bag)
+        })
+            .then(getBags)
+    }
 
     /*
         Load all Bags when the component is mounted. Ensure that
@@ -43,7 +53,7 @@ export const BagProvider = (props) => {
 
     return (
         <BagContext.Provider value={{
-            bags, addBag
+            bags, addBag, updateBag
         }}>
             {props.children}
         </BagContext.Provider>
