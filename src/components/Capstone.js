@@ -1,23 +1,14 @@
-import React from "react"
-import { BagProvider } from "./bags/BagProvider"
-import BagList from "./bags/BagList"
-import "./Capstone.css"
-import "./bags/Bag.css"
-import { ItemProvider } from "./items/ItemProvider"
-import ItemList from "./items/ItemList"
-import "./items/Item.css"
+import React, { useState } from "react"
+import Dashboard from "./Dashboard"
+import Auth from "./auth/Auth"
 
+export default () => {
+    const [check, update] = useState(false)
+    const toggle = () => update(!check)
 
-export default  () => (
-    <>
-        <h2>Welcome to EzBuy!!</h2>
-
-        <BagProvider>
-            <BagList />
-        </BagProvider>
-
-        <ItemProvider>
-            <ItemList />
-        </ItemProvider>
-    </>
-)
+    return (
+        localStorage.getItem("capstone_customer") ? (<Dashboard />)
+         : (<Auth toggle={toggle}  />)
+         
+    )
+}

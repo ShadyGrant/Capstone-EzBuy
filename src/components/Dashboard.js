@@ -1,15 +1,32 @@
-// import React from "react"
-// import "./Bag.css"
-// import { BagProvider } from "./bags/BagProvider"
-// import BagList from "./bags/BagList"
+import React from "react"
+import { BagProvider } from "./bags/BagProvider"
+import BagList from "./bags/BagList"
+import "./Capstone.css"
+import "./bags/Bag.css"
+import { ItemProvider } from "./items/ItemProvider"
+import ItemList from "./items/ItemList"
+import "./items/Item.css"
+import Auth from "./auth/Auth"
 
-// export const Capstone = () => (
-//     <>
-//         <h2>Welcome to EzBuy!!</h2>
+  
+export default  () => (
+    
+    <>
+    
+        <h2>Welcome to EzBuy!!</h2>
 
-//         <h2>Bags</h2>
-//         <BagProvider>
-//             <BagList /> 
-//         </BagProvider>
-//     </>
-// )
+        <BagProvider>
+        <ItemProvider>
+            <BagList />
+            <ItemList />
+        </ItemProvider>
+        </BagProvider>
+
+        
+
+        {/* <ItemProvider>
+            <ItemList />
+        </ItemProvider> */}
+        
+    </>
+)

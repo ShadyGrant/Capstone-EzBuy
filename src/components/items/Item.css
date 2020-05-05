@@ -5,8 +5,20 @@
 }
 
 .item {
-    flex-basis: 28%;
+    flex-basis: 23%;
     margin: 1em;
     padding: 1em;
     border: 1px solid black;
+    
+}
+.item_image{
+    /* width: auto;
+    height: 17rem;
+    max-width: 100%;
+    position: center; */
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
