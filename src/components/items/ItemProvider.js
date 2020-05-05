@@ -28,6 +28,13 @@ export const ItemProvider = (props) => {
         })
             .then(getItems)
     }
+    const deleteItem = itemId => {
+        return fetch(`http://localhost:8088/items/${itemId}`, {
+            "Content-Type": "application/json",
+            method: "DELETE"
+        })
+            .then(getItems)
+    }
     /*
         Load all Items when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -42,7 +49,7 @@ export const ItemProvider = (props) => {
 
     return (
         <ItemContext.Provider value={{
-            items, addItem
+            items, addItem, deleteItem
         }}>
             {props.children}
         </ItemContext.Provider>
