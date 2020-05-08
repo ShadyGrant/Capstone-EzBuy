@@ -27,6 +27,7 @@ export const EditItemForm = ({ item, toggleEdit, selectedItem }) => {
     const editItem = () => {
              updateItem({
                 id: item.id,
+                bagId: item.bagId,
                 name: name.current.value,
                 type: type.current.value,
                 websiteLink: websiteLink.current.value,
@@ -69,7 +70,7 @@ export const EditItemForm = ({ item, toggleEdit, selectedItem }) => {
                             autoFocus
                             className="form-control"
                             placeholder="Item type"
-                            defaultValue={item.describtion}
+                            defaultValue={item.type}
                             onChange={handleControlledInputChange}
                         />
                     </div>
