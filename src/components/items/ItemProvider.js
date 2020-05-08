@@ -35,6 +35,16 @@ export const ItemProvider = (props) => {
         })
             .then(getItems)
     }
+    const updateItem = item => {
+        return fetch(`http://localhost:8088/items/${item.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(item)
+        })
+            .then(getItems)
+    }
     /*
         Load all Items when the component is mounted. Ensure that
         an empty array is the second argument to avoid infinite loop.
@@ -49,7 +59,7 @@ export const ItemProvider = (props) => {
 
     return (
         <ItemContext.Provider value={{
-            items, addItem, deleteItem
+            items, addItem, deleteItem, updateItem
         }}>
             {props.children}
         </ItemContext.Provider>
