@@ -5,7 +5,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"
 import BagForm from "./BagForm"
 
 
-export default () => {
+export default ({setActiveList, setBagId}) => {
     const {bags}  = useContext(BagContext)
 
     const [modal, setModal] = useState(false)
@@ -14,27 +14,22 @@ export default () => {
     // const [editModal, setEditModal] = useState(false)
     // const toggleEdit = () => setEditModal(!editModal)
 
-    // deleteBag = (index) => {
-    //     const bags=Object.assign([], this.StaticRange.bags);
-    //     bags.splice(index, 1);
-    //     this.setState({bags:bags});
-
-    // }
-
-   
 
     return (
         <>
             <h2>My Bags</h2>
 
-            <button className="bag_button" onClick={toggle}>Add New Bag</button>
+            <Button className="bag_button" onClick={toggle}>Create New Bag</Button>
+
 
             <ul className="bags">
                 {
                     bags.map(bag => {
                         return <Bag
                          key={bag.id}
-                         bag={bag} />
+                         bag={bag} 
+                         setBagId={setBagId}
+                         setActiveList={setActiveList} />
 
                          
                     })
@@ -50,4 +45,4 @@ export default () => {
             </Modal>
         </>
     )
-            }
+  }
