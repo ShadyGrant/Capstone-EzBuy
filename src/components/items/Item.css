@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-inline-end: 4%;
+    padding-inline-start: 4%;
 }
 
 .item {
@@ -9,14 +11,8 @@
     margin: 1em;
     padding: 1em;
     border: 1px solid black;
-    
 }
 .item_image{
-    /* width: auto;
-    height: 17rem;
-    max-width: 100%;
-    position: center; */
-
     display: block;
     margin-left: auto;
     margin-right: auto;

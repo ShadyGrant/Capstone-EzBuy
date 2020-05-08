@@ -1,12 +1,17 @@
 import React, { useContext, useRef } from "react"
 import { ItemContext } from "./ItemProvider"
 import "./Item.css"
+import { Item } from "./Item"
+import { Bag } from "../bags/Bag"
+import { BagContext } from "../bags/BagProvider"
 
 
 export default props => {
     const { addItem } = useContext(ItemContext)
+    const { bags } = useContext(BagContext)
 
     // Store references to the <input> elements below
+    const bagId = useRef()
     const name = useRef()
     const type = useRef()
     const websiteLink = useRef()
@@ -17,6 +22,7 @@ export default props => {
     // Function to create an object and save it to the API
     const constructNewItem = () => {
         const newItemObj = {
+            bagId: parseInt(bagId.current.value),
             name: name.current.value,
             type: type.current.value,
             websiteLink: websiteLink.current.value,
@@ -33,6 +39,26 @@ export default props => {
         <form className="itemForm">
 
             <h2 className="itemForm__title">New Item</h2>
+
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="bagId">Assign Item to Bag: </label>
+                    <select
+                        defaultValue=""
+                        name="bagId"
+                        ref={bagId}
+                        id="bagId"
+                        className="form-control"
+                    >
+                        <option value="0">Select a Bag</option>
+                        {bags.map(e => (
+                            <option key={e.id} value={e.id}>
+                                {e.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+            </fieldset>
 
             <fieldset>
                 <div className="form-group">
@@ -123,6 +149,7 @@ export default props => {
                     />
                 </div>
             </fieldset>
+
 
             <button type="submit"
                 onClick={

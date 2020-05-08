@@ -1,9 +1,9 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useState, useRef } from "react"
 import { BagContext } from "./BagProvider"
 
 
 
-export const BagForm = ({ bag, toggleEdit }) => {
+export const EditBagForm = ({ bag, toggleEdit, selectedBag }) => {
     const { updateBag } = useContext(BagContext)
 
     // Separate state variable to track the bag as it is edited
@@ -18,21 +18,22 @@ export const BagForm = ({ bag, toggleEdit }) => {
         newBag[event.target.name] = event.target.value
         setBag(newBag)
     }
+    const name = useRef()
+    const describtion = useRef()
 
     const editBag = () => {
-            const updatedBagObj = {
-                name: updatedName.current.value,
-                describtion: updatedDescribtion.current.value,
-            }
-            console.log(updatedBagObj)
-            // and save it to the API.
-            addBag(updatedBagObj).then(props.toggler)
+             updateBag({
+                 id: bag.id,
+                name: name.current.value,
+                describtion: describtion.current.value
+            })
+           .then(toggleEdit)
         }
 
     return (
         <form className="bagForm">
 
-        <h2 className="bagForm__title">New Bag</h2>
+        <h2 className="bagForm__title">Edit Bag</h2>
         <fieldset>
             <div className="form-group">
                 <label htmlFor="bagName">Bag Name: </label>

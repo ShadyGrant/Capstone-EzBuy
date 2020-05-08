@@ -6,27 +6,31 @@ import ItemForm from "./ItemForm"
 import { BagContext } from "../bags/BagProvider"
 
 
-export default () => {
+export default ({setActiveList, bagId}) => {
     const {items} = useContext(ItemContext)
     const {bags}  = useContext(BagContext)
+
 
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
+    const filteredItems = items.filter(i => { return i.bagId===bagId})
+
 
     return (
         <>
-            <h2>My Items</h2>
+            <h2>Items</h2>
 
-            <button className="item_button" onClick={toggle}>Add New Item</button>
+            <Button className="item_button" onClick={toggle}>Add New Item</Button>
 
             <ul className="items">
             {
-                    items.map(ite => {
-                        const matchingBag = bags.find(ba => ba.id === ite.bagId)
+                    filteredItems.map(ite => {
+                        // const matchingBag = bags.find(ba => ba.id === ite.bagId)
                        
                         return <Item key={ite.id} item={ite}
-                            bag={matchingBag} />
+                            // bag={matchingBag}
+                            setActiveList={setActiveList} />
                     })
                 }
             </ul>
