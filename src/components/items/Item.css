@@ -10,11 +10,26 @@
     flex-basis: 23%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid black;
+    border: 3px double black;   
+    border-radius: 25px;
 }
 .item_image{
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+
+    width: auto;
+    height: 15rem;
+    max-width: 100%;
+    position: center;
+
+}
+.header{
+    padding-left: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+.item_button{
+    width: 10%;
 }

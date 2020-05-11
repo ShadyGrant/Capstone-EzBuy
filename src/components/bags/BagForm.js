@@ -34,7 +34,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Bag name"
+                        placeholder="Bag Name"
                     />
                 </div>
             </fieldset>
@@ -49,7 +49,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Bag describtion"
+                        placeholder="Bag Describtion"
                     />
                 </div>
             </fieldset>
