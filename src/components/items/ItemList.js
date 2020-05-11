@@ -19,10 +19,13 @@ export default ({setActiveList, bagId}) => {
 
     return (
         <>
-            <h2>Items</h2>
+            <h1 className="header">Items</h1>
+            
 
+            <div className="text-center">
             <Button className="item_button" onClick={toggle}>Add New Item</Button>
-
+            </div>
+            
             <ul className="items">
             {
                     filteredItems.map(ite => {

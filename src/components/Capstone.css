@@ -31,3 +31,10 @@ strong {
 address {
   margin: 0 0 1.5em;
 }
+.title{
+  text-align: center;
+  padding-top: 1%;
+}
+.Home{
+   width: 20%;
+}

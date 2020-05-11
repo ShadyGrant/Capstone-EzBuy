@@ -13,13 +13,9 @@ export const Item = ({ item, setActiveList }) => {
     const [editModal, setEditModal] = useState(false)
     const toggleEdit = () => setEditModal(!editModal)
 
-
-
-    
     const {updateItem} = useContext(ItemContext)
-
-
     const {deleteItem} = useContext(ItemContext)
+
     return(
     <section className="item">
         <div><img src={item.image} className="item_image"/></div>
@@ -30,11 +26,13 @@ export const Item = ({ item, setActiveList }) => {
         <li className="item__price">Price: ${item.price}</li>
         <li className="item__websiteLink">Website Link: <a href={item.websiteLink}>{item.websiteLink}</a></li>
         </ul>
+        <div className="text-center">
         <Button className ="deleteItem" onClick={() => deleteItem(item.id)}
         color="danger">Delete Item</Button>
 
         <Button className ="editButton"  onClick={() => {setItem({item}); toggleEdit()} }
         color="info">Edit Item</Button>
+        </div>
 
     <Modal isOpen={editModal} toggle={toggleEdit}>
          <ModalHeader toggle={toggleEdit}>
@@ -44,9 +42,6 @@ export const Item = ({ item, setActiveList }) => {
          <EditItemForm key={selectedItem.item.id} toggleEdit={toggleEdit} item={item} {...selectedItem} />
         </ModalBody>
     </Modal>
-
-
-
     </section>
 )
     }

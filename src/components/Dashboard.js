@@ -8,7 +8,6 @@ import ItemList from "./items/ItemList"
 import "./items/Item.css"
 import Auth from "./auth/Auth"
 import viewBag from "./viewBag"
-import { BrowserRouter,Route } from "react-router-dom"
 import { Button } from "reactstrap"
   
 
@@ -44,11 +43,10 @@ useEffect(() => {
 
 return (
     <div className="dataContainer">
-    <h1>Welcome to EzBuy!!</h1>
+    <h1 className="title">Welcome to EzBuy!!</h1>
     <div className="listContainer">
-        <div className="buttons">
-            <Button className="viewBag" onClick={() => setActiveList("bags")}>Home</Button>
-            {/* <Button className="viewItem" onClick={() => setActiveList("items")}>Items</Button> */}
+        <div className="text-center">
+            <Button className="Home" color="success" size="lg"  onClick={() => setActiveList("bags")}>Home</Button>
         </div>
         <div className="listDisplay">
             {components}

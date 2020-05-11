@@ -70,7 +70,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Item name"
+                        placeholder="Item Name"
                     />
                 </div>
             </fieldset>
@@ -85,7 +85,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Item type"
+                        placeholder="Item Type"
                     />
                 </div>
             </fieldset>
@@ -100,7 +100,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Item websiteLink"
+                        placeholder="Item WebsiteLink"
                     />
                 </div>
             </fieldset>
@@ -115,7 +115,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Item price"
+                        placeholder="Item Price"
                     />
                 </div>
             </fieldset>
@@ -130,7 +130,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Item describtion"
+                        placeholder="Item Describtion"
                     />
                 </div>
             </fieldset>
@@ -145,7 +145,7 @@ export default props => {
                         required
                         autoFocus
                         className="form-control"
-                        placeholder="Item image"
+                        placeholder="Item Image"
                     />
                 </div>
             </fieldset>

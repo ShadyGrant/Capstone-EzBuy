@@ -2,11 +2,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-inline-end: 4%;
+    padding-inline-start: 4%;
 }
-
 .bag {
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid black;
+    border: 3px double black;
+    background-color: lightblue;
+    border-radius: 25px;
+    text-align: center;
 }
+.myBags{
+    padding-left: 1rem;
+    padding-top: 2rem;
+    text-align: center;
+}
+.bag_button{
+    width: 10%;
+}
+
+
+
+

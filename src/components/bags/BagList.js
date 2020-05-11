@@ -11,16 +11,13 @@ export default ({setActiveList, setBagId}) => {
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
 
-    // const [editModal, setEditModal] = useState(false)
-    // const toggleEdit = () => setEditModal(!editModal)
-
-
     return (
         <>
-            <h2>My Bags</h2>
+            <h1 className="myBags">My Bags</h1>
 
+            <div className="text-center">
             <Button className="bag_button" onClick={toggle}>Create New Bag</Button>
-
+            </div>
 
             <ul className="bags">
                 {
@@ -29,9 +26,7 @@ export default ({setActiveList, setBagId}) => {
                          key={bag.id}
                          bag={bag} 
                          setBagId={setBagId}
-                         setActiveList={setActiveList} />
-
-                         
+                         setActiveList={setActiveList} /> 
                     })
                 }
             </ul>
