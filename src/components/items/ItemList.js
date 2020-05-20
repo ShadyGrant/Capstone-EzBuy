@@ -23,7 +23,7 @@ export default ({setActiveList, bagId}) => {
             
 
             <div className="text-center">
-            <Button className="item_button" onClick={toggle}>Add New Item</Button>
+            <Button className="item_button" color="success" onClick={toggle}>Add New Item</Button>
             </div>
             
             <ul className="items">

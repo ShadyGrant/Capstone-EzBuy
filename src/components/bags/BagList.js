@@ -16,7 +16,7 @@ export default ({setActiveList, setBagId}) => {
             <h1 className="myBags">My Bags</h1>
 
             <div className="text-center">
-            <Button className="bag_button" onClick={toggle}>Create New Bag</Button>
+            <Button className="bag_button" color="success" onClick={toggle}>Create New Bag</Button>
             </div>
 
             <ul className="bags">

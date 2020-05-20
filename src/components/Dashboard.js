@@ -46,7 +46,7 @@ return (
     <h1 className="title">Welcome to EzBuy!!</h1>
     <div className="listContainer">
         <div className="text-center">
-            <Button className="Home" color="success" size="lg"  onClick={() => setActiveList("bags")}>Home</Button>
+            <Button className="Home" color="primary" size="lg"  onClick={() => setActiveList("bags")}>Home</Button>
         </div>
         <div className="listDisplay">
             {components}
